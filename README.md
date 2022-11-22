@@ -11,14 +11,13 @@ Main program is the Container Bookings Sheet that based on information recorded 
 - *Pre export file to Main Line Operators (MLO)*
 
 Container Booking Sheets supports data validation.  
-Example file runs when script is called directly, it will save files to the desktop. Make sure that Excel is configured as below.
-
+Example file runs when script is called directly, it will save files to the desktop. Make sure that Excel is configured [as this](#excel-set-up).
 ## PDF-parser for FITOR with Excel UI
 Similar to Container Booking Sheet this PDF-parser uses Excel as UI and Xlwings to call Python and work with the Excel file.
 Program parses a Cargo Manifest in PDF-format from FITOR for information.
 
 Runtime is 10 ~ 30 seconds based on size of the PDF-file as there are a multitude of for loops running to collect unorganized data over several pages.
-Example file runs when script is called directly, it will save file to the desktop. Make sure Excel is configured as below.
+Example file runs when script is called directly, it will save file to the desktop. Make sure that Excel is configured [as this](#excel-set-up).
 
 ## Excel set up
 In order to set up `Xlwings` as an add-in in Excel you need to do the following:
