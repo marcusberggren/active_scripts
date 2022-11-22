@@ -1,0 +1,22 @@
+﻿NAME;PATH
+cargo_type;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-cargo-type.csv
+country;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-country.csv
+ems;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-ems.csv
+eu;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-eu.csv
+imdg;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-imdg.csv
+load_status;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-load-status.csv
+mlo;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-mlo.csv
+ocean_vessel;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-ocean-vessel.csv
+ports;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-ports.csv
+tpl_cargo_type;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-template-cargo-type.csv
+tpl_ever_partner_code;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-template-ever-partner-code.csv
+tpl_ports;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-template-ports.csv
+tpl_terminal;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-template-terminal.csv
+tpl_vessels;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-template-vessels.csv
+terminal;\BOLLORE\XPF - Documents\MAINTENANCE\templates\stored-data-terminal.csv
+tpl_dcm;\BOLLORE\XPF - Documents\MAINTENANCE\templates\template-dcm.xlsx
+tpl_ell;\BOLLORE\XPF - Documents\MAINTENANCE\templates\template-ell.xlsx
+tpl_rlb;\BOLLORE\XPF - Documents\MAINTENANCE\templates\template-rlb.xlsx
+tpl_cbf;\BOLLORE\XPF - Documents\MAINTENANCE\templates\template-cbf-cos.xlsx
+tpl_pre_export;\BOLLORE\XPF - Documents\MAINTENANCE\templates\template-pre-export.xlsx
+tpl_pre_export_continent;\BOLLORE\XPF - Documents\MAINTENANCE\templates\template-pre-export-continent.xlsx
