@@ -171,6 +171,7 @@ def cargo_detail(df: pd.DataFrame):
     df_cd.loc[:, "ISO Container Type"] = df["ISO TYPE"]
     df_cd.loc[:, "User Container Type"] = df["ISO TYPE"]
     df_cd.loc[:, "Commodity"] = df["LOAD STATUS"]
+    df_cd.loc[:, "OOG"] = df["OOG"]
     df_cd.loc[:, "Container No"] = df["CONTAINER"]
     df_cd.loc[:, "Weight in MT"] = df["MAX WEIGHT"]
     df_cd.loc[:, "TempMax"] = df["TEMP"]
