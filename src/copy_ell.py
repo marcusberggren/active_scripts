@@ -1,7 +1,9 @@
 import pandas as pd
 import xlwings as xw
+import numpy as np
 
 import os as os
+import re
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
@@ -77,11 +79,18 @@ def create_dataframe(path, pre_vgm_weights):
             "F.DESTINATION",
             "CARGO TYPE",
             "COMMODITY",
+            "OOG",
             "CONTAINER NO",
             "WEIGHT IN MT",
             "TEMPMAX",
             "IMCO",
             "UN",
+            "REMARKS",
+            "OOH(CM)",
+            "OLF(CM)",
+            "OLA(CM)",
+            "OWP(CM)",
+            "OWS(CM)",
             "VGM WEIGHT IN MT",
         ]
     ].copy()
@@ -138,10 +147,23 @@ def create_dataframe(path, pre_vgm_weights):
             df_cargo_detail[["WEIGHT IN MT", "VGM WEIGHT IN MT"]].max(axis=1) * 1000
         )
 
+    # Combines remarks and OOG info, if any
+    cols = ["REMARKS", "OOH(CM)", "OLF(CM)", "OLA(CM)", "OWP(CM)", "OWS(CM)"]
+    df_cargo_detail["REMARKS"].fillna("", inplace=True)
+    df_cargo_detail["OOH(CM)"].fillna("", inplace=True)
+    df_cargo_detail["OLF(CM)"].fillna("", inplace=True)
+    df_cargo_detail["OLA(CM)"].fillna("", inplace=True)
+    df_cargo_detail["OWP(CM)"].fillna("", inplace=True)
+    df_cargo_detail["OWS(CM)"].fillna("", inplace=True)
+
+    df_cargo_detail["COMBINED"] = df_cargo_detail[cols].apply(
+        lambda row: " ".join(row.values.astype(str)), axis=1
+    )
+
     df_final.loc[:, "POD STATUS"] = "T"
     df_final.loc[:, "LOAD STATUS"] = df_cargo_detail["COMMODITY"]
-    df_final.loc[:, "OOG"] = ""
-    df_final.loc[:, "REMARK"] = ""
+    df_final.loc[:, "OOG"] = df_cargo_detail["OOG"]
+    df_final.loc[:, "REMARK"] = df_cargo_detail["COMBINED"]
     df_final.loc[:, "IMDG"] = df_cargo_detail["IMCO"]
     df_final.loc[:, "UNNR"] = df_cargo_detail["UN"]
     df_final.loc[:, "CHEM REF"] = ""
@@ -165,7 +187,6 @@ def copy_data(dataframe, data_to_sheet, row_number):
     data_to_sheet["A" + row].options(
         pd.DataFrame, header=None, index=False
     ).value = dataframe
-    return
 
 
 if __name__ == "__main__":
